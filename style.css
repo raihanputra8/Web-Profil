@@ -1,0 +1,377 @@
+/* =========================================
+   1. VARIABEL WARNA & FONT
+   ========================================= */
+:root {
+    --bg-color: #1a1b26; /* Latar gelap */
+    --text-color: #a9b1d6; /* Teks abu-abu terang */
+    --heading-color: #c0caf5; /* Judul terang */
+    --accent-color: #7aa2f7; /* Aksen biru */
+    --card-bg: #24283b; /* Warna latar kartu */
+    --font-main: 'Inter', sans-serif;
+    --font-code: 'Fira Code', monospace;
+}
+
+/* =========================================
+   2. RESET & GLOBAL STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Mencegah web bisa digeser ke samping kiri-kanan */
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: 0.3s;
+}
+
+/* =========================================
+   3. NAVIGASI (NAVBAR)
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(26, 27, 38, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-family: var(--font-code);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* =========================================
+   4. HERO SECTION & FOTO PROFIL
+   ========================================= */
+#hero {
+    min-height: 100vh; /* Memastikan area perkenalan minimal setinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 40px 20px; /* Padding atas ditambahkan agar tidak tertutup navbar */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Menyusun foto, teks, dan tombol berjajar ke bawah vertikal */
+    align-items: center; /* Memaksa semua elemen berada di tengah */
+    max-width: 800px;
+}
+
+/* --- KODE UNTUK FOTO LINGKARAN --- */
+.profile-img {
+    width: 160px; /* Ukuran lebar foto */
+    height: 160px; /* Ukuran tinggi foto */
+    border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
+    object-fit: cover; /* Memotong otomatis agar wajah tidak gepeng */
+    margin-bottom: 25px; /* Jarak antara foto dan nama */
+    border: 4px solid var(--accent-color); /* Bingkai biru di sekeliling foto */
+    box-shadow: 0 0 25px rgba(122, 162, 247, 0.4); /* Cahaya biru di belakang foto */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Efek membesar sedikit saat disentuh kursor */
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+#hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #8c98c4;
+}
+
+.cta-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: var(--font-code);
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #1a1b26;
+}
+
+.btn-primary:hover {
+    background-color: #8db0fc;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: #1a1b26;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   5. SECTIONS GENERAL (Jarak Bab)
+   ========================================= */
+section {
+    padding: 100px 50px 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    font-family: var(--font-code);
+}
+
+/* =========================================
+   6. SKILLS SECTION
+   ========================================= */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+}
+
+/* =========================================
+   7. PROJECTS SECTION
+   ========================================= */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-info img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #16161e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #8c98c4;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-info span {
+    font-family: var(--font-code);
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    background-color: rgba(122, 162, 247, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+    background-color: var(--card-bg);
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-links {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    font-family: var(--font-code);
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.copy {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 40px;
+}
+
+/* =========================================
+   9. RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* -----------------------------------------
+   TABLET & HP LAYAR BESAR (Maksimal Lebar 768px)
+   ----------------------------------------- */
+@media (max-width: 768px) {
+    /* Navbar: Tumpuk logo di atas, menu di bawah agar tidak tabrakan */
+    nav {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    /* Hero Section: Perkecil ukuran teks agar tidak memenuhi layar */
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Sections: Kurangi jarak kosong (padding) di kiri dan kanan */
+    section {
+        padding: 120px 20px 60px 20px; 
+    }
+
+    /* Proyek: Turunkan batas minimal lebar kartu dari 380px ke 300px */
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* -----------------------------------------
+   HP LAYAR KECIL (Maksimal Lebar 480px)
+   ----------------------------------------- */
+@media (max-width: 480px) {
+    /* Navbar: Rapatkan menu agar tidak turun ke baris baru */
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap; /* Izinkan menu turun ke bawah jika benar-benar tidak muat */
+        justify-content: center;
+    }
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero: Perkecil lagi ukuran foto dan teks utama */
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Skill Card: Paksa kartu memenuhi 100% lebar layar HP */
+    .skill-card {
+        width: 100%;
+    }
+
+    /* Project Grid: Ubah tata letak menjadi 1 kolom penuh murni */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tombol CTA: Ubah menjadi berbaris ke bawah agar mudah dipencet jempol */
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Tombol memenuhi lebar layar */
+    }
+}
