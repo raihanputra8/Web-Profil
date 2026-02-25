@@ -375,3 +375,13 @@ footer {
         width: 100%; /* Tombol memenuhi lebar layar */
     }
 }
+
+/* Mengatur teks paragraf perkenalan agar rata kiri-kanan */
+#hero p {
+    text-align: justify; /* KUNCI UTAMA: Membuat teks rata kiri dan kanan */
+    font-size: 1.05rem; /* Ukuran teks sedikit dibesarkan agar nyaman dibaca */
+    line-height: 1.8; /* Jarak antar baris agar teks tidak terlihat sumpek */
+    color: #a9b1d6; /* Menyamakan warna teks dengan tema gelap kita */
+    margin-bottom: 35px; /* Memberi jarak nafas antara teks dengan tombol di bawahnya */
+    max-width: 750px; /* Membatasi kelebaran teks agar tidak terlalu panjang ke samping */
+}
